@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RealEstate</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="requirement">Post Requirement</string>
+    <string name="post_property">Post Property</string>
+    <string name="customer_details">CustomerDetails</string>
+    <string name="tos_text">Sachin</string>
+      <string name="tos_text1">9940842416</string>
+        <string name="tos_text2">2Bhk</string>
+</resources>

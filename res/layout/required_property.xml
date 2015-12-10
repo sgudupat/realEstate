@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/required_property"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Post A Requirement"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/buyer_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/required_property"
+        android:layout_below="@+id/required_property"
+        android:layout_marginTop="16dp"
+        android:hint="Buyer Name" />
+
+    <EditText
+        android:id="@+id/buyer_mobile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buyer_name"
+        android:layout_below="@+id/buyer_name"
+        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:hint="Buyer Mobile" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/buyer_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buyer_mobile"
+        android:layout_below="@+id/buyer_mobile"
+        android:layout_marginTop="26dp"
+        android:hint="Buyer Email" />
+
+    <TextView
+        android:id="@+id/type_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buyer_email"
+        android:layout_alignRight="@+id/buyer_email"
+        android:layout_below="@+id/buyer_email"
+        android:layout_marginTop="16dp"
+        android:text="Type" />
+
+    <Spinner
+        android:id="@+id/property_expectedTypeSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/type_text"
+        android:layout_toRightOf="@+id/buyer_name" />
+
+    <TextView
+        android:id="@+id/spacetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/type_text"
+        android:layout_below="@+id/property_expectedTypeSpinner"
+        android:layout_marginTop="14dp"
+        android:text="Space" />
+
+    <Spinner
+        android:id="@+id/property_expectedSpaceSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/spacetext"
+        android:layout_toRightOf="@+id/type_text" />
+
+    <EditText
+        android:id="@+id/expected_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/expected_place"
+        android:layout_below="@+id/expected_place"
+        android:ems="10"
+        android:hint="Price" />
+
+    <EditText
+        android:id="@+id/expected_place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/required_property"
+        android:layout_below="@+id/spacetext"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Locality" />
+
+    <Button
+        android:id="@+id/requirement_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/expected_price"
+        android:layout_toLeftOf="@+id/property_expectedTypeSpinner"
+        android:onClick="showPopup"
+        android:text="Submit" />
+
+</RelativeLayout>

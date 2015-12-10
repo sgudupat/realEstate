@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/post_propertyView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Post A Property"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/property_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/post_propertyView1"
+        android:layout_below="@+id/post_propertyView1"
+        android:layout_marginTop="14dp"
+        android:hint="PropertyName" />
+
+    <EditText
+        android:id="@+id/property_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/property_name"
+        android:layout_below="@+id/property_name"
+       android:hint="Property Address" />
+
+    <TextView
+        android:id="@+id/property_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/property_address"
+        android:layout_below="@+id/property_address"
+        android:layout_marginTop="16dp"
+        android:hint="Type" />
+
+    <Spinner
+        android:id="@+id/property_typeSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/property_type"
+        android:layout_toRightOf="@+id/property_name" />
+
+    <TextView
+        android:id="@+id/property_space"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/property_type"
+        android:layout_below="@+id/property_typeSpinner"
+        android:layout_marginTop="14dp"
+         android:hint="space"  />
+
+    <Spinner
+        android:id="@+id/property_spaceSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/property_space"
+        android:layout_toRightOf="@+id/property_name" />
+
+     <EditText
+         android:id="@+id/property_location"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignLeft="@+id/property_space"
+         android:layout_below="@+id/property_spaceSpinner"
+         android:ems="10"
+         android:hint="Locality" />
+
+     <EditText
+        android:id="@+id/property_price"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignLeft="@+id/property_location"
+         android:layout_below="@+id/property_location"
+         android:layout_marginTop="16dp"
+         android:hint="Selling Price" />
+
+     <Button
+          android:id="@+id/postProperty_button"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignLeft="@+id/property_price"
+         android:layout_below="@+id/property_price"
+         android:layout_marginTop="17dp"
+         android:onClick="showPopup"
+         android:text="Submit" />
+
+</RelativeLayout>

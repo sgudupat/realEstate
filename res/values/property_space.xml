@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="property_space" >
+        <item>1BHK</item>
+        <item>2BHK</item>
+        <item>3BHK</item>
+        </string-array>
+    
+</resources>
