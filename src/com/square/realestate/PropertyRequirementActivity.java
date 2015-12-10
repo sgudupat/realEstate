@@ -5,7 +5,9 @@ package com.square.realestate;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -117,8 +119,8 @@ public class PropertyRequirementActivity extends Activity {
 		            return res;
 		        }
 		    });
-			Button btnClosePopup = (Button) findViewById(R.id.btn_New);
-			btnClosePopup.setOnClickListener(new AdapterView.OnClickListener() {
+			//Button btnClosePopup = (Button) findViewById(R.id.btn_New);
+			/*btnClosePopup.setOnClickListener(new AdapterView.OnClickListener() {
 
 
 				@Override
@@ -128,7 +130,8 @@ public class PropertyRequirementActivity extends Activity {
 					Log.i("onClick", "end");
 					startActivity(intent);
 				}
-			});
+			});*/
+			
 		}
 
 		//show popup window after you have done initialization of views
@@ -195,5 +198,24 @@ public class PropertyRequirementActivity extends Activity {
 		}catch (Exception e) {
 			Log.i("Response 2:Error:", e.getMessage());
 			Toast.makeText(getApplicationContext(), "Update Failed, Please Retry !!!", Toast.LENGTH_LONG).show();
-		}}}
+		}}
+	public void onBackPressed(View view) {
+	    new AlertDialog.Builder(this)
+	        .setIcon(android.R.drawable.ic_dialog_alert)
+	        .setTitle("REAL ESTATE")
+	        .setMessage("Are you sure you want to close this activity?")
+	        .setPositiveButton("Yes", new DialogInterface.OnClickListener()
+	    {
+	        @Override
+	        public void onClick(DialogInterface dialog, int which) {
+	        	Intent intent = new Intent(PropertyRequirementActivity.this, MainActivity.class);
+				Log.i("onClick", "end");
+				startActivity(intent);
+	           // finish();    
+	        }
+
+	    })
+	    .setNegativeButton("No", null)
+	    .show();
+	}}
 

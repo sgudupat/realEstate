@@ -5,8 +5,12 @@ import java.util.ArrayList;
 import com.square.domain.PropertyDetails;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -78,4 +82,22 @@ public class PostPropertyActivity extends Activity {
         }
         pwindo.showAtLocation(layout, Gravity.CENTER, 0, 0);
 }
-}
+	public void onBackPressed(View view) {
+	    new AlertDialog.Builder(this)
+	        .setIcon(android.R.drawable.ic_dialog_alert)
+	        .setTitle("REAL ESTATE")
+	        .setMessage("Are you sure you want to close this activity?")
+	        .setPositiveButton("Yes", new DialogInterface.OnClickListener()
+	    {
+	        @Override
+	        public void onClick(DialogInterface dialog, int which) {
+	        	Intent intent = new Intent(PostPropertyActivity.this, MainActivity.class);
+				Log.i("onClick", "end");
+				startActivity(intent);
+	           // finish();    
+	        }
+
+	    })
+	    .setNegativeButton("No", null)
+	    .show();
+	}}
