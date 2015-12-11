@@ -8,18 +8,19 @@ import android.view.View;
 
 public class MainActivity extends Activity {
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-	}
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
 
-public void postRequierment(View view){
-	Intent intent= new Intent(this,PropertyRequirementActivity.class);
-	startActivity(intent);
-}
-public void postProperty(View view){
-	Intent intent = new Intent(this,PostPropertyActivity.class);
-	startActivity(intent);
-}
+    public void postRequirement(View view) {
+        Intent intent = new Intent(this, PropertyRequirementActivity.class);
+        startActivity(intent);
+    }
+
+    public void postProperty(View view) {
+        Intent intent = new Intent(this, PostPropertyActivity.class);
+        startActivity(intent);
+    }
 }
