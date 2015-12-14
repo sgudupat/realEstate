@@ -91,10 +91,8 @@ public class PostPropertyActivity extends Activity {
 	    {
 	        @Override
 	        public void onClick(DialogInterface dialog, int which) {
-	        	Intent intent = new Intent(PostPropertyActivity.this, MainActivity.class);
-				Log.i("onClick", "end");
-				startActivity(intent);
-	           // finish();    
+	        	
+	           finish();    
 	        }
 
 	    })
