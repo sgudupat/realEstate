@@ -77,8 +77,7 @@ public class SimpleHttpClient {
 
 			HttpResponse response = client.execute(request);
 
-			in = new BufferedReader(new InputStreamReader(response.getEntity()
-					.getContent()));
+			in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
 
 			StringBuffer sb = new StringBuffer("");
 

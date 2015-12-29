@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/property_popup_relative"
+    android:id="@+id/requirement_popup_relative"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#526A96" >
 
     <ListView
-            android:id="@+id/property_popup_listview"
+            android:id="@+id/requirement_popup_listview"
             android:layout_width="wrap_content"
             android:layout_height="400dp"
-            android:layout_alignParentTop="true" android:layout_above="@+id/btn_New">
+            android:layout_alignParentTop="true" android:layout_above="@+id/btn_close_popup">
     </ListView>
     <Button
-        android:id="@+id/btn_New"
+        android:id="@+id/btn_close_popup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
