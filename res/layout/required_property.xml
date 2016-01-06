@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent" android:gravity="center_vertical">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/property_back1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="backProperty"
+        android:src="@drawable/back" />
 
     <EditText
         android:id="@+id/buyer_name"
@@ -10,7 +18,8 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/required_property"
         android:layout_below="@+id/required_property"
-        android:hint="Buyer Name" android:gravity="center_horizontal"/>
+        android:gravity="center_horizontal"
+        android:hint="Buyer Name" />
 
     <EditText
         android:id="@+id/buyer_mobile"
@@ -19,7 +28,8 @@
         android:layout_alignLeft="@+id/buyer_name"
         android:layout_below="@+id/buyer_name"
         android:ems="10"
-        android:hint="Buyer Mobile" android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:hint="Buyer Mobile" >
 
         <requestFocus />
     </EditText>
@@ -30,21 +40,24 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/buyer_mobile"
         android:layout_below="@+id/buyer_mobile"
-        android:hint="Buyer Email" android:gravity="center_horizontal"/>
+        android:gravity="center_horizontal"
+        android:hint="Buyer Email" />
 
     <Spinner
         android:id="@+id/property_expectedTypeSpinner"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_alignTop="@+id/type_text"
-        android:layout_toRightOf="@+id/buyer_name" android:gravity="center_horizontal"/>
+        android:layout_toRightOf="@+id/buyer_name"
+        android:gravity="center_horizontal" />
 
     <Spinner
         android:id="@+id/property_expectedSpaceSpinner"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_alignTop="@+id/spacetext"
-        android:layout_toRightOf="@+id/type_text" android:gravity="center_horizontal"/>
+        android:layout_toRightOf="@+id/type_text"
+        android:gravity="center_horizontal" />
 
     <EditText
         android:id="@+id/expected_price"
@@ -53,7 +66,8 @@
         android:layout_alignLeft="@+id/expected_place"
         android:layout_below="@+id/expected_place"
         android:ems="10"
-        android:hint="Price" android:gravity="center_horizontal"/>
+        android:gravity="center_horizontal"
+        android:hint="Price" />
 
     <EditText
         android:id="@+id/expected_place"
@@ -62,16 +76,18 @@
         android:layout_alignRight="@+id/required_property"
         android:layout_below="@+id/spacetext"
         android:ems="10"
-        android:hint="Locality" android:gravity="center_horizontal"/>
+        android:gravity="center_horizontal"
+        android:hint="Locality" />
 
     <Button
-        android:id="@+id/requirement_submit"
+        android:id="@+id/postProperty_button"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/expected_price"
-        android:layout_toLeftOf="@+id/property_expectedTypeSpinner"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
         android:onClick="showPopup"
-        android:text="Submit" android:layout_gravity="center_horizontal" android:layout_marginTop="25dp"
-        android:textStyle="bold" android:textSize="20dp"/>
+        android:text="Submit"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
 </LinearLayout>

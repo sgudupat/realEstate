@@ -21,7 +21,7 @@ public class MainActivity extends Activity {
 
     public void postProperty(View view) {
         //Intent intent = new Intent(this, PostPropertyActivity.class);
-        Intent intent = new Intent(this, GalleryViewActivity.class);
+        Intent intent = new Intent(this, GalleryViewPropertyActivity.class);
         startActivity(intent);
     }
 }

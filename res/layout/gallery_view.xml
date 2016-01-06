@@ -1,29 +1,40 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
 
     <LinearLayout
-            android:layout_width="fill_parent"
-            android:id="@+id/galleryView"
-            android:layout_marginBottom="5dip"
-            android:layout_alignParentBottom="true"
-            android:gravity="center_horizontal|center_vertical"
-            android:orientation="horizontal"
-            android:layout_height="wrap_content">
+        android:id="@+id/galleryView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dip"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="horizontal" >
     </LinearLayout>
 
     <LinearLayout
-            android:layout_width="fill_parent"
-            android:id="@+id/imageLayout"
-            android:gravity="center"
-            android:layout_alignParentTop="true"
-            android:layout_height="fill_parent">
+        android:id="@+id/imageLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="378dp"
+        android:layout_alignParentTop="true"
+        android:layout_weight="0.53"
+        android:gravity="center" >
 
         <com.square.realestate.GalleryCustom
-                android:id="@+id/thisgallery"
-                android:spacing="60dip"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"/>
+            android:id="@+id/thisgallery"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:spacing="225dip" />
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/image_count"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="37dp"
+        android:gravity="center"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
 </LinearLayout>

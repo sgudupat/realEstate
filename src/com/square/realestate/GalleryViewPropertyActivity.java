@@ -1,50 +1,36 @@
 package com.square.realestate;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
+import android.util.DisplayMetrics;
+import android.view.*;
+import android.widget.*;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ImageView.ScaleType;
-import android.widget.BaseAdapter;
-import android.widget.EditText;
-import android.widget.Gallery;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.PopupWindow;
-import android.widget.TextView;
 import com.square.domain.PropertyDetails;
 
-public class GalleryViewActivity extends Activity {
+import java.util.ArrayList;
+
+public class GalleryViewPropertyActivity extends Activity {
     Gallery ga;
     //int width, height;
     LinearLayout layout;
-    LinearLayout count_layout;
-    Integer[] pics = {R.layout.required_property, R.layout.post_property};
+    Integer[] pics = { R.layout.post_property,R.layout.required_property};
     ImageView paging;
-    float mLastMotionX;
     int count = 0;
+    LinearLayout count_layout;
     static TextView page_text[];
-  
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gallery_view);
         layout = (LinearLayout) findViewById(R.id.galleryView);
-        count_layout = (LinearLayout) findViewById(R.id.image_count);
+       
       /*  Spinner propertyType1 = (Spinner) findViewById(R.id.property_expectedTypeSpinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this, R.array.property_type, android.R.layout.simple_spinner_item);
@@ -64,14 +50,11 @@ public class GalleryViewActivity extends Activity {
             paging = new ImageView(this);
             paging.setId(i);
             paging.setBackgroundResource(R.drawable.white);
-            
             layout.addView(paging);
         }
 
-        ga = (Gallery) findViewById(R.id.thisgallery); 
-        count_layout=(LinearLayout)  findViewById(R.id.image_count);
-        ga.setAdapter(new ImageAdapter(this));  
-      
+        ga = (Gallery) findViewById(R.id.thisgallery);       
+        ga.setAdapter(new ImageAdapter(this));      
         count=ga.getAdapter().getCount();
         page_text = new TextView[count];
         
@@ -81,7 +64,7 @@ public class GalleryViewActivity extends Activity {
             page_text[i].setTextSize(45);
             page_text[i].setTypeface(null, Typeface.BOLD);
             page_text[i].setTextColor(android.graphics.Color.RED);
-            count_layout.addView(page_text[i]);
+           // count_layout.addView(page_text[i]);
         }
         ga.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
@@ -97,10 +80,9 @@ public class GalleryViewActivity extends Activity {
                
             }
         });
-        
     }
     
-  
+
     public class ImageAdapter extends BaseAdapter {
 
         private Context ctx;
@@ -128,14 +110,11 @@ public class GalleryViewActivity extends Activity {
                 int temp_y = (int) ((3*temp)/2.0f);
                 iv.setLayoutParams(new Gallery.LayoutParams(temp,temp_y));
                 iv.setBackgroundResource(imageBackground);*/
-            	
                 view = inflater.inflate(pics[arg0], null);
-              
-             
+               
             } else {
                 view = convertView;
              
-              
             }
             /* TextView tv = new TextView(ctx);
              tv.setText("Page " + (arg0+1));
@@ -147,34 +126,23 @@ public class GalleryViewActivity extends Activity {
              layoutnew.addView(tv);*/
             return view;
         }
-        
 
         @Override
         public Object getItem(int position) {
             return null;
         }
 
-		@Override
-		public long getItemId(int position) {
-			// TODO Auto-generated method stub
-			return 0;
-		}
-
-	
-
-   /*     @Override
+        @Override
         public long getItemId(int position) {
             if (pre != -1) {
                 ImageView img = (ImageView) findViewById(pre);
                 img.setBackgroundResource(R.drawable.white);
-                
             }
             ImageView img1 = (ImageView) findViewById(position);
             img1.setBackgroundResource(R.drawable.bluedot);
-            
             this.pre = position;
             return position;
-        }*/
+        }
     }
 
     @Override
@@ -229,13 +197,12 @@ public class GalleryViewActivity extends Activity {
         pwindo.showAtLocation(layout, Gravity.CENTER, 0, 0);
     }
     public void backProperty(View view){
-    	 Intent intent = new Intent(GalleryViewActivity.this, MainActivity.class);
-         startActivity(intent);
-    }
-    
+      	 Intent intent = new Intent(GalleryViewPropertyActivity.this, MainActivity.class);
+           startActivity(intent);
+      }
 
     public void onBackPressed(View view) {
-    	   Intent intent = new Intent(GalleryViewActivity.this, GalleryViewActivity.class);
+    	   Intent intent = new Intent(GalleryViewPropertyActivity.this, GalleryViewPropertyActivity.class);
            startActivity(intent);
        /* new AlertDialog.Builder(this)
                 .setIcon(android.R.drawable.ic_dialog_alert)
@@ -275,5 +242,4 @@ public class GalleryViewActivity extends Activity {
         Intent intent = new Intent(this, PostPropertyActivity.class);
         startActivity(intent);
     }
-   
 }
