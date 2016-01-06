@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -44,7 +45,7 @@ public class GalleryViewActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gallery_view);
         layout = (LinearLayout) findViewById(R.id.galleryView);
-        count_layout = (LinearLayout) findViewById(R.id.image_count);
+      //  count_layout = (LinearLayout) findViewById(R.id.image_count);
       /*  Spinner propertyType1 = (Spinner) findViewById(R.id.property_expectedTypeSpinner);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this, R.array.property_type, android.R.layout.simple_spinner_item);
@@ -69,7 +70,7 @@ public class GalleryViewActivity extends Activity {
         }
 
         ga = (Gallery) findViewById(R.id.thisgallery); 
-        count_layout=(LinearLayout)  findViewById(R.id.image_count);
+      //  count_layout=(LinearLayout)  findViewById(R.id.image_count);
         ga.setAdapter(new ImageAdapter(this));  
       
         count=ga.getAdapter().getCount();
@@ -80,22 +81,37 @@ public class GalleryViewActivity extends Activity {
             page_text[i].setText(".");
             page_text[i].setTextSize(45);
             page_text[i].setTypeface(null, Typeface.BOLD);
+            Log.i("Slide", "Red");
             page_text[i].setTextColor(android.graphics.Color.RED);
             count_layout.addView(page_text[i]);
+            Log.i("Slide", "count_layout Red");
         }
         ga.setOnItemClickListener(new OnItemClickListener() {
-            public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
-                System.out.println("SELECTED : " + position);
+            public void onItemClick(AdapterView<?> arg0, View arg1,  View arg2, long arg3) {
+                System.out.println("SELECTED : " + arg2);
                 for (int i = 0; i < count; i++) {
                 	GalleryViewActivity.page_text[i].setTextColor(android.graphics.Color.RED);
+                	Log.i("slide selected", "slide red");
                      }
-                GalleryViewActivity.page_text[position].setTextColor(android.graphics.Color.GREEN);
-                
+               // GalleryViewActivity.page_text[arg2].setTextColor(android.graphics.Color.GREEN);
+                Log.i("slide selected", "slide green");
             }
             public void onNothingSelected(AdapterView<?> arg0) {
              
                
             }
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				   System.out.println("SELECTED : " + position);
+	                for (int i = 0; i < count; i++) {
+	                	GalleryViewActivity.page_text[i].setTextColor(android.graphics.Color.RED);
+	                	Log.i("slide selected", "slide red");
+	                     }
+	                GalleryViewActivity.page_text[position].setTextColor(android.graphics.Color.GREEN);
+	                Log.i("slide selected", "slide green");
+				
+			}
         });
         
     }
@@ -151,13 +167,13 @@ public class GalleryViewActivity extends Activity {
 
         @Override
         public Object getItem(int position) {
-            return null;
+            return position;
         }
 
 		@Override
 		public long getItemId(int position) {
 			// TODO Auto-generated method stub
-			return 0;
+			return position;
 		}
 
 	

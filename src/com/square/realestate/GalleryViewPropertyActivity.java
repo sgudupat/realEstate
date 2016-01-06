@@ -55,7 +55,7 @@ public class GalleryViewPropertyActivity extends Activity {
 
         ga = (Gallery) findViewById(R.id.thisgallery);       
         ga.setAdapter(new ImageAdapter(this));  
-        count_layout=(LinearLayout)  findViewById(R.id.image_count);
+       // count_layout=(LinearLayout)  findViewById(R.id.image_count);
         count=ga.getAdapter().getCount();
         page_text = new TextView[count];
         
@@ -65,7 +65,7 @@ public class GalleryViewPropertyActivity extends Activity {
             page_text[i].setTextSize(45);
             page_text[i].setTypeface(null, Typeface.BOLD);
             page_text[i].setTextColor(android.graphics.Color.RED);
-            count_layout.addView(page_text[i]);
+           // count_layout.addView(page_text[i]);
         }
         ga.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {

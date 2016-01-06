@@ -4,16 +4,6 @@
     android:orientation="vertical" >
 
     <LinearLayout
-        android:id="@+id/galleryView"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="5dip"
-        android:gravity="center_horizontal|center_vertical"
-        android:orientation="horizontal" >
-    </LinearLayout>
-
-    <LinearLayout
         android:id="@+id/imageLayout"
         android:layout_width="fill_parent"
         android:layout_height="378dp"
@@ -28,13 +18,13 @@
             android:spacing="225dip" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/image_count"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="37dp"
-        android:gravity="center"
-        android:orientation="horizontal" >
-    </LinearLayout>
+     <LinearLayout
+            android:id="@+id/galleryView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dip"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="horizontal" >
+        </LinearLayout>
 
 </LinearLayout>
