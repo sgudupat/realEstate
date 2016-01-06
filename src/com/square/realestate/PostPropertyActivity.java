@@ -35,6 +35,10 @@ public class PostPropertyActivity extends Activity {
         propertyType.setAdapter(adapter);
         propertySpace.setAdapter(adapterSpace);
     }
+    public void backProperty(View view){
+      	 Intent intent = new Intent(PostPropertyActivity.this, MainActivity.class);
+           startActivity(intent);
+      }
 
     public void showPopup(View view) {
         //if you call this method correctly then you do not need to wrap 
@@ -42,10 +46,10 @@ public class PostPropertyActivity extends Activity {
 
         LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View layout = inflater.inflate(R.layout.property_popup, (ViewGroup) findViewById(R.id.property_popup_relative), false);
+        View layout = inflater.inflate(R.layout.requirement_popup, (ViewGroup) findViewById(R.id.requirement_popup_relative), false);
 
         final PopupWindow pwindo = new PopupWindow(layout, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, true);
-        ListView listView = (ListView) layout.findViewById(R.id.property_popup_listview);
+        ListView listView = (ListView) layout.findViewById(R.id.requirement_popup_listview);
         //get txt view from "layout" which will be added into popup window
         //before it you tried to find view in activity container
       /*  TextView txt = (TextView) layout.findViewById(R.id.person_name);
@@ -81,7 +85,10 @@ public class PostPropertyActivity extends Activity {
     }
 
     public void onBackPressed(View view) {
-        new AlertDialog.Builder(this)
+    	Intent intent = new Intent(PostPropertyActivity.this, PostPropertyActivity.class);
+        Log.i("onClick", "end");
+        startActivity(intent);
+  /*      new AlertDialog.Builder(this)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setTitle("REAL ESTATE")
                 .setMessage("Are you sure you want to close this activity?")
@@ -92,6 +99,6 @@ public class PostPropertyActivity extends Activity {
                     }
                 })
                 .setNegativeButton("No", null)
-                .show();
+                .show();*/
     }
 }

@@ -15,13 +15,13 @@ public class MainActivity extends Activity {
 
     public void postRequirement(View view) {
         //Intent intent = new Intent(this, PropertyRequirementActivity.class);
-        Intent intent = new Intent(this, GalleryViewActivity.class);
+        Intent intent = new Intent(this, PropertyRequirementActivity.class);
         startActivity(intent);
     }
 
     public void postProperty(View view) {
         //Intent intent = new Intent(this, PostPropertyActivity.class);
-        Intent intent = new Intent(this, GalleryViewPropertyActivity.class);
+        Intent intent = new Intent(this, PostPropertyActivity.class);
         startActivity(intent);
     }
 }

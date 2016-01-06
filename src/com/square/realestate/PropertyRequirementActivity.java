@@ -55,6 +55,11 @@ public class PropertyRequirementActivity extends Activity {
 				}
 			});*/
     }
+    public void backProperty(View view){
+   	 Intent intent = new Intent(PropertyRequirementActivity.this, MainActivity.class);
+        startActivity(intent);
+   }
+   
 
     public void showPopup(View view) {
         //if you call this method correctly then you do not need to wrap
@@ -188,7 +193,10 @@ public class PropertyRequirementActivity extends Activity {
     }
 
     public void onBackPressed(View view) {
-        new AlertDialog.Builder(this)
+    	Intent intent = new Intent(PropertyRequirementActivity.this, PropertyRequirementActivity.class);
+        Log.i("onClick", "end");
+        startActivity(intent);
+       /* new AlertDialog.Builder(this)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setTitle("REAL ESTATE")
                 .setMessage("Are you sure you want to close this activity?")
@@ -203,6 +211,6 @@ public class PropertyRequirementActivity extends Activity {
 
                 })
                 .setNegativeButton("No", null)
-                .show();
+                .show();*/
     }
 }
